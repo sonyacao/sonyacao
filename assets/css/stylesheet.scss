@@ -7,9 +7,12 @@ $teal: #2b7a78;
 
 
 body {
-    font-family: 'Poppins', helvetica;
-    font-size: 15px;
-    font-weight: 300;
+    font: {
+      family: 'Poppins', helvetica;
+      size: 15px;
+      weight: 300;
+    }
+    
     line-height: 20px;
     letter-spacing: 0.02em;
     overflow-x: hidden;
@@ -31,8 +34,10 @@ body {
   
   h4 {
     color: $black;
-    font-size: 14px;
-    font-weight: 600;
+    font: {
+      size: 14px;
+      weight: 600;
+    }
   }
   
   a {
@@ -131,14 +136,16 @@ body {
     outline: 0 none;
   }
   
-  .paddsection {
+  %padding {
     padding-top: 90px;
-    padding-bottom: 90px;
+    padding-bottom: 90px !important;
+  }
+  .paddsection {
+    @extend %padding
   }
   
   .paddsections {
-    padding-top: 90px;
-    padding-bottom: 90px !important;
+    @extend %padding
   }
   
   .hvr-shutter-in-horizontal::before {
@@ -313,14 +320,16 @@ body {
   }
   
   #portfolio .portfolio-list .nav li {
+    font: {
+      family: 'Poppins', helvetica;
+      weight: 500;
+      size: 14px;
+    }
     margin: 0 40px 0 0;
     float: left;
-    font-size: 14px;
     color: $black;
     line-height: 16px;
     cursor: pointer;
-    font-family: 'Poppins', helvetica;
-    font-weight: 500;
     letter-spacing: 0.02em;
     text-transform: capitalize;
     transition: all 0.5s ease-in-out 0s;
